@@ -12,7 +12,6 @@ namespace FriendFunny.SqlSugar.Extension
     /// </summary>
     public class Repository<T> : SimpleClient<T>, IRepository<T>, IDisposable where T : class, new()
     {
-
         /// <summary>
         /// Sqlsugar Option 
         /// </summary>
