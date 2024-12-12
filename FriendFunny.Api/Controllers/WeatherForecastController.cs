@@ -1,33 +1,31 @@
+using FriendFunny.Application.Contracts.Interface.Student;
+using FriendFunny.Application.Contracts.Interface.Student.Dto;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FriendFunny.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class StudentController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        private readonly ILogger<StudentController> _logger;
+        private readonly IStudentAppService _studentAppService;
 
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public StudentController(ILogger<StudentController> logger, IStudentAppService studentAppService)
         {
             _logger = logger;
+            _studentAppService = studentAppService;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+
+        /// <summary>
+        /// 创建学生
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost("student")]
+        public async Task CreateAsync(CreateStudentDto dto) 
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            await _studentAppService.CreateAsync(dto);
         }
     }
 }

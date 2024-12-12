@@ -10,8 +10,4 @@
     <ProjectReference Include="..\FriendFunny.Domain\FriendFunny.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="SqlSugarCore" Version="5.1.4.170" />
-  </ItemGroup>
-
 </Project>

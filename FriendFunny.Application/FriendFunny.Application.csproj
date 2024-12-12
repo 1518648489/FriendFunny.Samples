@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FriendFunny.Application.Contracts\FriendFunny.Application.Contracts.csproj" />
     <ProjectReference Include="..\FriendFunny.Domain\FriendFunny.Domain.csproj" />
+    <ProjectReference Include="..\FriendFunny.SqlSugar\FriendFunny.SqlSugar.csproj" />
   </ItemGroup>
 
 </Project>

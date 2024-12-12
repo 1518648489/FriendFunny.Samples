@@ -10,8 +10,4 @@
     <ProjectReference Include="..\FriendFunny.Domain.Shared\FriendFunny.Domain.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Entity\" />
-  </ItemGroup>
-
 </Project>
